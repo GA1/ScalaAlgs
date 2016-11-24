@@ -1,12 +1,6 @@
-//package algorithms
-
-//import org.junit.runner.RunWith
 import org.scalatest.FunSuite
 import org.scalatest.junit.JUnitRunner
 
-
-
-//@RunWith(classOf[JUnitRunner])
 class BinaryGapTest extends FunSuite {
 
   test("binaryGap of 1") {
@@ -45,17 +39,3 @@ class BinaryGapTest extends FunSuite {
   }
 
 }
-
-//class BinaryGap {
-//
-//  def of(i: Int): Int = {
-//    val binary = i.toBinaryString
-//    binary.toList.foldLeft((0, 0))(
-//      (x, y) =>
-//        if (y == '0') (x._1, x._2 + 1)
-//        else
-//          if (x._1 < x._2) (x._2, 0)
-//          else (x._1, 0)
-//    )._1
-//  }
-//}

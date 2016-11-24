@@ -1,4 +1,3 @@
-//package algorithms
 
 class BinaryGap {
 
