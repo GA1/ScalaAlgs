@@ -1,3 +1,3 @@
-run the tests
+Run the tests with:
 
 ```sbt run```
