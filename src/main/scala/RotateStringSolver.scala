@@ -1,5 +1,5 @@
 
-class RotateString {
+class RotateStringSolver {
 
   def rotate(s: String): IndexedSeq[String] = {
     val N = s.length
@@ -16,11 +16,12 @@ class RotateString {
   }
 }
 
-object Solution {
+
+object RotateStringSolution {
 
   def main(args: Array[String]) {
     val lines = for (line <- io.Source.stdin.getLines) yield (line)
-    val rotator = new RotateString()
+    val rotator = new RotateStringSolver()
     val ss = lines.toList.tail
     ss foreach {rotator.rotateAndPrint(_)}
   }
