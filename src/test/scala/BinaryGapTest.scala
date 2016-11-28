@@ -1,5 +1,4 @@
 import org.scalatest.FunSuite
-import org.scalatest.junit.JUnitRunner
 
 class BinaryGapTest extends FunSuite {
 
