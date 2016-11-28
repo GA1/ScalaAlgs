@@ -21,9 +21,9 @@ object RotateStringSolution {
 
   def main(args: Array[String]) {
     val lines = for (line <- io.Source.stdin.getLines) yield (line)
-    val rotator = new RotateStringSolver()
+    val solver = new RotateStringSolver()
     val ss = lines.toList.tail
-    ss foreach {rotator.rotateAndPrint(_)}
+    ss foreach {solver.rotateAndPrint(_)}
   }
 
 }

@@ -1,5 +1,5 @@
 
-class BinaryGap {
+class BinaryGapSolver {
 
   def of(i: Int): Int = {
     val binary = i.toBinaryString
