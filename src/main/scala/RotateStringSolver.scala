@@ -6,14 +6,9 @@ class RotateStringSolver {
     (1 to (N)).scanLeft(s)((x, y) =>x.substring(1, N) + x.charAt(0)).tail
   }
 
-  def printRotations(rotations: IndexedSeq[String]): Unit = {
-    rotations foreach {x => print(x + " ")}
-    println()
-  }
+  private def printRotations(rotations: IndexedSeq[String]): Unit = println(rotations.mkString(" "))
 
-  def rotateAndPrint(s: String): Unit = {
-    printRotations(rotate(s))
-  }
+  def rotateAndPrint(s: String): Unit = printRotations(rotate(s))
 }
 
 

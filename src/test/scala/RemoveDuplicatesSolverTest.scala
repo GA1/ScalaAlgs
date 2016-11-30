@@ -24,6 +24,4 @@ class RemoveDuplicatesSolverTest extends FunSuite {
     assert(solver.solve("abab") === "ab")
   }
 
-
-
 }
