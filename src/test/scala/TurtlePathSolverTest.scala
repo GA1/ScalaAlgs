@@ -40,9 +40,4 @@ class TurtlePathSolverTest extends FunSuite {
     assert(solver.solution(Array(1, 3, 2, 5, 4, 4, 1000, 3, 2)) === 7)
   }
 
-  test("solve for 1, 3, 2,  5, 4, 4, 2, 3, 2") {
-    assert(solver.solution(Array(1, 3, 2, 5, 4, 4, 2, 3, 2)) === 7)
-  }
-
-
 }

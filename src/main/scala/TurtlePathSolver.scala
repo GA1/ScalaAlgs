@@ -11,7 +11,6 @@ class TurtlePathSolver {
     }
 
     def findWhenClosed(i: Int): Int = {
-      assert(i > 2)
       if (i == a.length) -1
       else if (a(i) <= a(i - 2)) i
       else findWhenClosed(i + 1)
@@ -19,7 +18,7 @@ class TurtlePathSolver {
 
     if (a.length <= 3) return -1
     else {
-      val closedIndex = findWhenClosed(3)
+      val closedIndex = findWhenClosed(2)
       if (closedIndex == -1) - 1
       else solutionForClosedCase(closedIndex + 1, List(a(closedIndex - 2), a(closedIndex - 1), a(closedIndex)))
     }
