@@ -4,13 +4,25 @@ class TurtlePathSolver {
 
   def solution(a: Array[Int]): Int = {
 
-    def solution(i: Int, last4: List[Int]): Int = {
-      if (i == a.length) - 1
-      else if (last4.length < 4) solution(i + 1, last4 :+ a.head)
-      else if (a.head >= last4(2)) i
-      else solution(i + 1, last4.tail :+ a.head)
+    def solutionForClosedCase(i: Int, last3: List[Int]): Int = {
+      if (i == a.length) -1
+      else if (a(i) >= last3(2)) i + 1
+      else solutionForClosedCase(i + 1, last3.tail :+ a(i))
     }
-    solution(0, Nil)
+
+    def findWhenClosed(i: Int): Int = {
+      assert(i > 2)
+      if (i == a.length) -1
+      else if (a(i) <= a(i - 2)) i
+      else findWhenClosed(i + 1)
+    }
+
+    if (a.length <= 3) return -1
+    else {
+      val closedIndex = findWhenClosed(3)
+      if (closedIndex == -1) - 1
+      else solutionForClosedCase(closedIndex + 1, List(a(closedIndex - 2), a(closedIndex - 1), a(closedIndex)))
+    }
   }
 
 }
