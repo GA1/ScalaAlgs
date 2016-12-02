@@ -1,8 +1,8 @@
-import scala.collection.immutable.Queue
 
+// THE ALGORITHM IS INCOMPLETE
 class TurtlePathSolver {
 
-  def solution(a: Array[Int]): Int = {
+  def solve(a: Array[Int]): Int = {
 
     def solutionForClosedCase(i: Int, last3: List[Int]): Int = {
       if (i == a.length) -1

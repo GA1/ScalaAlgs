@@ -1,24 +1,27 @@
 
-class BunnyJump {
+class BunnyJumpSolver {
 
-  def rotate(s: String): IndexedSeq[String] = {
-    val N = s.length
-    (1 to (N)).scanLeft(s)((x, y) =>x.substring(1, N) + x.charAt(0)).tail
+  def solve(jumps: Array[BigInt]): BigInt = {
+    return jumps.foldLeft(BigInt("1"))(lcm(_, _))
   }
 
-  private def printRotations(rotations: IndexedSeq[String]): Unit = println(rotations.mkString(" "))
+  def gcd(a: BigInt, b: BigInt): BigInt = {
+    if (a == 0) b else gcd(b % a, a)
+  }
 
-  def rotateAndPrint(s: String): Unit = printRotations(rotate(s))
+  def lcm(a: BigInt, b: BigInt): BigInt = {
+    a * b / gcd(a, b)
+  }
+
 }
 
-
-object BunnyJump {
+object BunnyJumpSolver {
 
   def main(args: Array[String]) {
     val lines = for (line <- io.Source.stdin.getLines) yield (line)
-    val solver = new RotateStringSolver()
-    val ss = lines.toList.tail
-    ss foreach {solver.rotateAndPrint(_)}
+    val solver = new BunnyJumpSolver()
+    val jumpsInStrings = lines.toList(1)
+    print(solver.solve(jumpsInStrings.split(" ") map (BigInt(_))))
   }
 
 }
