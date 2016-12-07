@@ -21,7 +21,7 @@ class SecurityInvolutionTest extends FunSuite {
   }
 
   test("solve security involution for 1->3, 2->4, 3->1, 4->2") {
-    assert(!solver.solve(List(3, 4, 1, 2)))
+    assert(solver.solve(List(3, 4, 1, 2)))
   }
 
 }
