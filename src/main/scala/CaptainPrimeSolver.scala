@@ -1,6 +1,7 @@
 
 object CaptainPrimeSolver {
 
+  private val PrimalitySolver = new PrimalitySolver()
 
   abstract class PersonFate
   case object CENTRAL extends PersonFate
@@ -8,7 +9,7 @@ object CaptainPrimeSolver {
   case object RIGHT extends PersonFate
   case object DEAD extends PersonFate
 
-  def isPrime(n: Int): Boolean = n != 1 && ((2 to Math.sqrt(n).toInt).toStream forall (n % _ != 0))
+  def isPrime(n: Int): Boolean = PrimalitySolver.solve(n)
 
   def containsZero(n: Int): Boolean = !n.toString.toList.find(_ == '0').isEmpty
 
