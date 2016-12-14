@@ -13,15 +13,6 @@ class CaptainPrimeSolverTest extends FunSuite {
     assert(CaptainPrimeSolver.containsZero(1234567890) === true)
   }
 
-  test("isPrime") {
-    assert(CaptainPrimeSolver.isPrime(1) === false)
-    assert(CaptainPrimeSolver.isPrime(2) === true)
-    assert(CaptainPrimeSolver.isPrime(19) === true)
-    assert(CaptainPrimeSolver.isPrime(10) === false)
-    assert(CaptainPrimeSolver.isPrime(101) === true)
-    assert(CaptainPrimeSolver.isPrime(1234567890) === false)
-  }
-
   test("getNumberFromRight for 1") {
     assert(CaptainPrimeSolver.getNumbersFromRight(1) === Stream[Int]())
   }
