@@ -9,7 +9,7 @@ object CaptainPrimeSolver {
   case object RIGHT extends PersonFate
   case object DEAD extends PersonFate
 
-  def isPrime(n: Int): Boolean = PrimalitySolver.solve(n)
+  private def isPrime(n: Int): Boolean = PrimalitySolver.solve(n)
 
   def containsZero(n: Int): Boolean = !n.toString.toList.find(_ == '0').isEmpty
 
