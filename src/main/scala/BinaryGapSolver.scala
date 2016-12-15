@@ -1,7 +1,7 @@
 
 class BinaryGapSolver {
 
-  def of(i: Int): Int = {
+  def solve(i: Int): Int = {
     val binary = i.toBinaryString
     binary.toList.foldLeft((0, 0))(
       (x, y) =>
