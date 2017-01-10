@@ -11,5 +11,4 @@ class PangramSolver {
   def solve(s: String): Boolean =
     (s map (_.toLower) filter (c => alphabet.contains(c)) distinct).length == 26
 
-
 }
