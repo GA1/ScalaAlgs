@@ -4,6 +4,14 @@ class UnfairnessSolverTest extends FunSuite {
 
   private val solver = new UnfairnessSolver()
 
+  test("test for 10, 20 and K = 2") {
+    assert(solver.solve(Array(10, 20), 2) === 10)
+  }
+
+  test("test for 1, 7, 11 and K = 2") {
+    assert(solver.solve(Array(1, 7, 11), 2) === 4)
+  }
+
   test("test for 10, 100, 300, 200, 1000, 20, 30 and K = 3") {
     assert(solver.solve(Array(10, 100, 300, 200, 1000, 20, 30), 3) === 20)
   }
