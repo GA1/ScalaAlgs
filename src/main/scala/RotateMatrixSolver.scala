@@ -17,9 +17,18 @@ class RotateMatrixSolver {
   }
 
   def putFrameIntoArray(A: Array[Array[Int]], rotatedFrame: Array[Int], width: Int, height: Int, depth: Int): Unit = {
-    A(depth) = rotatedFrame.slice(0, width)
-    A(height - 1 - depth) = rotatedFrame.slice(width + height - 2, width + height - 2 + width).reverse
-    (1 + depth) to (height - 2 - depth) foreach {
+//    A(depth) = rotatedFrame.slice(0, width)
+//    A(height - 1 - depth) = rotatedFrame.slice(width + height - 1, width + height - 2 + width).reverse
+
+    (depth) until (width - depth) foreach {
+      i => {
+        A(depth)(i) = rotatedFrame(i)
+        A(height - 1 - depth)(width - 1 - i) = rotatedFrame(width + height - 1 + i)
+      }
+    }
+
+
+    (1 + depth) until (height - 1 - depth) foreach {
       i => {
         A(i)(width - 1) = rotatedFrame(width + i)
         A(height - 1 - i)(0) = rotatedFrame(width + height - 2 + width + i)

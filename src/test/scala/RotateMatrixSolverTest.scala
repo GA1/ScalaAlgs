@@ -46,15 +46,15 @@ class RotateMatrixSolverTest extends FunSuite {
   }
 
   test("put frame 1, 2, 3, 4, 5, 6 with depth = 1, width = 2, height = 3") {
-    val frame = Array(1, 2, 4, 3)
-    val A = Array.ofDim[Int](3, 2)
+    val frame = Array(1, 2, 4, 6, 5, 3)
+    val A = Array.ofDim[Int](2, 3)
     solver.putFrameIntoArray(A, frame, 3, 2, 0)
-    assert(A === Array(Array(1, 2), Array(3, 4)))
+    assert(A === Array(Array(1, 2, 3), Array(4, 5, 6)))
   }
 
   test("put frame 1, 2, 3, 4, 5, 6 with depth = 1, , width = 3, height = 2") {
     val frame = Array(1, 2, 4, 6, 5, 3)
-    val A = Array.ofDim[Int](2, 3)
+    val A = Array.ofDim[Int](3, 2)
     solver.putFrameIntoArray(A, frame, 2, 3, 0)
     assert(A === Array(Array(1, 2), Array(3, 4), Array(5, 6)))
   }
