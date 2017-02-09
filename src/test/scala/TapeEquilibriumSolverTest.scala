@@ -35,6 +35,4 @@ class TapeEquilibriumSolverTest extends FunSuite {
     assert(solver.solve2(Array(3, 1, 2, 4, 3)) === 1)
   }
 
-
-
 }
