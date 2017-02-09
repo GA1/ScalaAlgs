@@ -2,15 +2,17 @@
 class MaxCounterSolver {
 
   def solve(n: Int, A: Array[Int]): Array[Int] = {
-    val result = new Array[Int](n)
-    A map (a => if (a < n) increase(a, result) else maxCounter(A) )
-    result
+    
+    val res = new Array[Int](n)
+    A foreach (a => if (a <= n) increase(a, res) else if (a == n + 1) maxCounter(res))
+    res
   }
 
-  private def maxCounter(A: Array[Int]) {
-    val max = A.max
-    (0 until A.length) foreach (i => A(i) = max)
+  private def maxCounter(res: Array[Int]) {
+    val max = res.max
+    (0 until res.length) foreach (i => res(i) = max)
   }
 
-  private def increase(which: Int, A: Array[Int]) = A(which) = A(which) + 1
+  private def increase(which: Int, A: Array[Int]) = A(which - 1) = A(which - 1) + 1
+
 }
