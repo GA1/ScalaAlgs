@@ -1,8 +1,8 @@
 
 class MaxCounterSolver {
 
+  //TODO improve performance O(N^2) -> (N)
   def solve(n: Int, A: Array[Int]): Array[Int] = {
-    
     val res = new Array[Int](n)
     A foreach (a => if (a <= n) increase(a, res) else if (a == n + 1) maxCounter(res))
     res
