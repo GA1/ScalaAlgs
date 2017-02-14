@@ -1,20 +1,20 @@
 import org.scalatest.FunSuite
 
 
-class PangramSolverTest extends FunSuite {
+class CountTrianglesSolverTest extends FunSuite {
 
-  val sovler = new PangramSolver()
+  val sovler = new CountTrianglesSolver()
 
-  test("solve for empty frase") {
-    assert(sovler.solve("") === false)
+  test("solve for 1, 2, 3") {
+    assert(sovler.solve(Array(1, 2, 3)) === 0)
   }
 
-  test("solve for full english alphabet") {
-    assert(sovler.solve("a b c d e f g h i j k l m n o p q r s t u v w x y z") === true)
+  test("solve for 2, 2, 3") {
+    assert(sovler.solve(Array(2, 2, 3)) === 1)
   }
 
-  test("""solve for a sentece: "We promptly judged antique ivory buckles for the next prize"""") {
-    assert(sovler.solve("We promptly judged antique ivory buckles for the next prize") === true)
+  test("solve for 10, 2, 5, 1, 8, 12") {
+    assert(sovler.solve(Array(10, 2, 5, 1, 8, 12)) === 4)
   }
 
 }
