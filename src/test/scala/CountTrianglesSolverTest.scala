@@ -9,6 +9,14 @@ class CountTrianglesSolverTest extends FunSuite {
     assert(sovler.solve(Array(1, 2, 3)) === 0)
   }
 
+  test("solve for 3, 2, 1") {
+    assert(sovler.solve(Array(3, 2, 1)) === 0)
+  }
+
+  test("solve for 2, 3, 2") {
+    assert(sovler.solve(Array(2, 3, 2)) === 1)
+  }
+
   test("solve for 2, 2, 3") {
     assert(sovler.solve(Array(2, 2, 3)) === 1)
   }
