@@ -1,7 +1,6 @@
 
 class CountTrianglesSolver {
 
-
   def solve(sides: Array[Int]): Int = {
     val sortedSides = sides.sorted
     var numberOfPossibleTriangles = 0
