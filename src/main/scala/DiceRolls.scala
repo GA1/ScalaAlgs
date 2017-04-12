@@ -1,6 +1,3 @@
-/**
-  * Created by kamil on 1/11/17.
-  */
 class DiceRolls {
 
 
