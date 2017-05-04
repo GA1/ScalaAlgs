@@ -3,7 +3,6 @@
   */
 class StartsWithSolver {
 
-  def solve(s: String, prefixes: String*): Boolean = {
-    prefixes.exists(p => s.startsWith(p))
-  }
+  def solve(s: String, prefixes: String*): Boolean = prefixes.exists(p => s.startsWith(p))
+
 }
